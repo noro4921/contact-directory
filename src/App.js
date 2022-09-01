@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import "./App.css";
+import Contact from "./Components/Contact";
 
 function App() {
+  const [contactDataState, setContactDataState] = useState([]);
+
+  const getApiData = () => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        console.log(res.data);
+        setContactDataState(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getApiData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> Contacts</h1>
+      <Row xs={1} md={3} className="g-4">
+        {contactDataState.map((contact) => {
+          return (
+            <Col>
+              <Contact contact={contact} />
+            </Col>
+          );
+        })}
+      </Row>
     </div>
   );
 }
