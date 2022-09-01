@@ -1,7 +1,12 @@
 import "./Contact.css";
 import { Row, Card } from "react-bootstrap";
+import { useState } from "react";
+import Example from "./Modal";
 
 const Contact = ({ contact }) => {
+  const [modal, setModal] = useState(false);
+  const [tempData, setTempData] = useState([]);
+
   const { email, id, name, phone, username, website, address, company } =
     contact;
 
@@ -23,13 +28,22 @@ const Contact = ({ contact }) => {
             <Card.Text>{email}</Card.Text>
           </div>
           <div className="card-content">
-            <Card.Text>{address.city}</Card.Text>
+            <Card.Text>{company.name} &copy;</Card.Text>
           </div>
           <div className="card-content">
             <Card.Text>{phone}</Card.Text>
           </div>
+          <div className="card-content">
+            <Card.Text>{website}</Card.Text>
+          </div>
         </Row>
       </Card.Body>
+      <Example
+        username={username}
+        address={address}
+        company={company}
+        name={name}
+      />
     </Card>
   );
 };
