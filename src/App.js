@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Col, Row, Modal, Button } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import "./App.css";
 import Contact from "./Components/Contact";
 

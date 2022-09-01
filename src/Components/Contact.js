@@ -1,12 +1,14 @@
 import "./Contact.css";
 import { Row, Card } from "react-bootstrap";
-import { useState } from "react";
 import Example from "./Modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faPhone,
+  faGlobe,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contact = ({ contact }) => {
-  const [modal, setModal] = useState(false);
-  const [tempData, setTempData] = useState([]);
-
   const { email, id, name, phone, username, website, address, company } =
     contact;
 
@@ -24,17 +26,22 @@ const Contact = ({ contact }) => {
         </div>
 
         <Row xs={1} md={1}>
-          <div className="card-content">
-            <Card.Text>{email}</Card.Text>
-          </div>
-          <div className="card-content">
+          <div className="card-content company-name">
             <Card.Text>{company.name} &copy;</Card.Text>
           </div>
-          <div className="card-content">
+          <div className="card-content email">
+            <FontAwesomeIcon icon={faEnvelope} />
+            <Card.Text>{email}</Card.Text>
+          </div>
+          <div className="card-content phone">
+            <FontAwesomeIcon icon={faPhone} />
             <Card.Text>{phone}</Card.Text>
           </div>
-          <div className="card-content">
-            <Card.Text>{website}</Card.Text>
+          <div className="card-content website">
+            <FontAwesomeIcon icon={faGlobe} />
+            <Card.Text>
+              <a href={`https://${website}`}>{website}</a>
+            </Card.Text>
           </div>
         </Row>
       </Card.Body>
