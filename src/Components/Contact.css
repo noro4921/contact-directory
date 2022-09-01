@@ -1,9 +1,11 @@
-body {
+/* body {
   padding: 30px;
-}
+} */
 
 .contact-img {
-  /* border-radius: 50% !important; */
+  border-radius: 50% !important;
+  height: 10rem;
+  width: 10rem !important;
 }
 
 .contact-card {

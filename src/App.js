@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Modal, Button } from "react-bootstrap";
 import "./App.css";
 import Contact from "./Components/Contact";
 
@@ -24,8 +24,8 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1> Contacts</h1>
+    <div className="App">
+      <h1 className="header"> Contacts</h1>
       <Row xs={1} md={3} className="g-4">
         {contactDataState.map((contact) => {
           return (
