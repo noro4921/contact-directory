@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "./Modal.css";
 
 function Example(contact) {
   const [show, setShow] = useState(false);
@@ -25,8 +26,9 @@ function Example(contact) {
             <Row>
               <Col xs={12} md={8}>
                 <h4>{contact.company.name} &copy;</h4>
-                <h6>{contact.company.catchPhrase}</h6>
-                <h6>{contact.company.bs}</h6>
+                <h6>
+                  {`${contact.company.catchPhrase} to ${contact.company.bs}`}
+                </h6>
               </Col>
               <Col xs={6} md={4}>
                 <h4>Address</h4>

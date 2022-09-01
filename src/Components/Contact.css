@@ -32,6 +32,10 @@
   margin: 5px 0;
 }
 
-.email {
+.font-i {
+  padding: 10px;
+}
+
+.company-name {
   color: grey;
 }

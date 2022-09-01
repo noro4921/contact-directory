@@ -29,16 +29,16 @@ const Contact = ({ contact }) => {
           <div className="card-content company-name">
             <Card.Text>{company.name} &copy;</Card.Text>
           </div>
-          <div className="card-content email">
-            <FontAwesomeIcon icon={faEnvelope} />
+          <div className="card-content ">
+            <FontAwesomeIcon icon={faEnvelope} className="font-i" />
             <Card.Text>{email}</Card.Text>
           </div>
           <div className="card-content phone">
-            <FontAwesomeIcon icon={faPhone} />
+            <FontAwesomeIcon icon={faPhone} className="font-i" />
             <Card.Text>{phone}</Card.Text>
           </div>
           <div className="card-content website">
-            <FontAwesomeIcon icon={faGlobe} />
+            <FontAwesomeIcon icon={faGlobe} className="font-i" />
             <Card.Text>
               <a href={`https://${website}`}>{website}</a>
             </Card.Text>
