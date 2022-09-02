@@ -13,7 +13,7 @@ const Contact = ({ contact }) => {
     contact;
 
   return (
-    <Card border="dark" className="contact-card">
+    <Card border="dark">
       <Card.Body>
         <div className="contact-image-wrapper">
           <Card.Img

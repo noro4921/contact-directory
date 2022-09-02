@@ -12,7 +12,7 @@ function Example(contact) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="dark" onClick={handleShow}>
         More Info
       </Button>
 
