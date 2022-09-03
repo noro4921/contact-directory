@@ -3,6 +3,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This is an application that showcases the different company contacts and their details.
 
+## Deployed Website Url:
+
+https://contact-directory-reuben.herokuapp.com
+
 ## Available Scripts
 
 In the project directory, you can use the following command to install all the packages used in this app:
