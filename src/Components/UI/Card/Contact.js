@@ -1,6 +1,4 @@
-import "./Contact.css";
 import { Row, Card } from "react-bootstrap";
-import Example from "./Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -8,9 +6,12 @@ import {
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
+import InfoModal from "../Modal/InfoModal";
+import "./Contact.css";
+
 const Contact = ({ contact }) => {
-  const { email, id, name, phone, username, website, address, company } =
-    contact;
+  // destructuring contact data
+  const { email, name, phone, username, website, address, company } = contact;
 
   return (
     <Card border="dark">
@@ -24,7 +25,6 @@ const Contact = ({ contact }) => {
         <div className="card-content">
           <Card.Title>{name}</Card.Title>
         </div>
-
         <Row xs={1} md={1}>
           <div className="card-content company-name">
             <Card.Text>{company.name} &copy;</Card.Text>
@@ -45,7 +45,7 @@ const Contact = ({ contact }) => {
           </div>
         </Row>
       </Card.Body>
-      <Example
+      <InfoModal
         username={username}
         address={address}
         company={company}

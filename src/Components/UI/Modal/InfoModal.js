@@ -2,44 +2,46 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import "./Modal.css";
 
-function Example(contact) {
+import "./InfoModal.css";
+
+function InfoModal(contact) {
+  // state for the modal visibility
   const [show, setShow] = useState(false);
 
+  // handlers to toggle the modal visibility
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
+      <Button className="more-info" variant="dark" onClick={handleShow}>
         More Info
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{contact.name}</Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
           <Container>
             <Row>
-              <Col xs={12} md={8}>
+              <Col xs={12}>
                 <h4>{contact.company.name} &copy;</h4>
-                <h6>
-                  {`${contact.company.catchPhrase} to ${contact.company.bs}`}
+                <h6 className="info">
+                  {contact.company.catchPhrase} to {contact.company.bs}
                 </h6>
               </Col>
-              <Col xs={6} md={4}>
+              <Col xs={12} className="address">
                 <h4>Address</h4>
-                <h6>{contact.address.suite}</h6>
-                <h6>{contact.address.street}</h6>
-                <h6>{contact.address.city}</h6>
+                <h6 className="info">
+                  {contact.address.suite} <br />
+                  {contact.address.street} <br />
+                  {contact.address.city}
+                </h6>
               </Col>
             </Row>
           </Container>
         </Modal.Body>
-
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -50,4 +52,4 @@ function Example(contact) {
   );
 }
 
-export default Example;
+export default InfoModal;
